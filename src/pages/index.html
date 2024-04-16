@@ -1,0 +1,155 @@
+<head>
+  <title>Men in Rags</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"  rel="stylesheet" />
+
+</head>
+<nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+  <div class="px-3 py-3 lg:px-5 lg:pl-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center justify-start rtl:justify-end">
+        <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+            <span class="sr-only">Open sidebar</span>
+            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+               <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+            </svg>
+         </button>
+        <a href="https://flowbite.com" class="flex ms-2 md:me-24">
+          <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
+          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Rags</span>
+        </a>
+      </div>
+      <div class="flex items-center">
+          <div class="flex items-center ms-3">
+            <div>
+              <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                <span class="sr-only">Open user menu</span>
+                <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+              </button>
+            </div>
+            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
+              <div class="px-4 py-3" role="none">
+                <p class="text-sm text-gray-900 dark:text-white" role="none">
+                  Neil Sims
+                </p>
+                <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
+                  neil.sims@flowbite.com
+                </p>
+              </div>
+              <ul class="py-1" role="none">
+                <li>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Settings</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Earnings</a>
+                </li>
+                <li>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</nav>
+
+<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+   <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+      <ul class="space-y-2 font-medium">
+         <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              
+               <span class="ms-3">Recent chart</span>
+            </a>
+         </li>
+         <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               
+               <span class="flex-1 ms-3 whitespace-nowrap">Mind your business</span>
+               </a>
+         </li> 
+      </ul>
+   </div>
+</aside>
+
+<div class="p-4 sm:ml-64">
+   <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+      <div class="grid grid-cols-1 gap-1 mb-4">
+         <div class="flex items-center justify-center h-full">
+            <div class="max-w-lg w-full">
+              <!-- User's message -->
+              <div class="flex justify-end mb-4">
+                <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-xs break-words">
+                  <p class="text-sm">You</p>
+                  <p>Hello, how are you?</p>
+                </div>
+              </div>
+        
+              <!-- AI's response -->
+              <div class="flex mb-4">
+                <div class="bg-gray-100 text-gray-800 rounded-lg py-2 px-4 max-w-xs break-words">
+                  <p class="text-sm">AI</p>
+                  <p>I'm doing well, thank you. How can I assist you today?</p>
+                </div>
+              </div>
+        
+              <!-- Another User's message -->
+              <div class="flex justify-end mb-4">
+                <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-xs break-words">
+                  <p class="text-sm">You</p>
+                  <p>Could you tell me about machine learning?</p>
+                </div>
+              </div>
+        
+              <!-- Another AI's response -->
+              <div class="flex mb-4">
+                <div class="bg-gray-100 text-gray-800 rounded-lg py-2 px-4 max-w-xs break-words">
+                  <p class="text-sm">AI</p>
+                  <p>Machine learning is a subset of artificial intelligence...</p>
+                </div>
+              </div>
+         </div> 
+      </div>
+   </div>
+</div> 
+
+
+<div class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+   <div class="grid h-full max-w-lg  mx-auto font-medium">
+       
+      <div class="flex items-center border border-gray-300 rounded-lg shadow-md">
+         <input
+           type="text"
+           style="margin-left:80px"
+           class="flex-1 px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50"
+           placeholder="Type a message..."
+         />
+         <button class="px-4 py-2 text-blue-500 hover:text-blue-700 focus:outline-none">
+            <svg width="30px" height="30px" viewBox="-5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    
+               <title>microphone</title>
+                
+               <defs>
+           
+           </defs>
+               <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                   <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-107.000000, -309.000000)" fill="#000000">
+                       <path d="M118,333 C121.866,333 125,329.866 125,326 L125,316 C125,312.134 121.866,309 118,309 C114.134,309 111,312.134 111,316 L111,326 C111,329.866 114.134,333 118,333 L118,333 Z M129,328 L127,328 C126.089,332.007 122.282,335 118,335 C113.718,335 109.911,332.007 109,328 L107,328 C107.883,332.799 112.063,336.51 117,336.955 L117,339 L116,339 C115.448,339 115,339.448 115,340 C115,340.553 115.448,341 116,341 L120,341 C120.552,341 121,340.553 121,340 C121,339.448 120.552,339 120,339 L119,339 L119,336.955 C123.937,336.51 128.117,332.799 129,328 L129,328 Z" id="microphone" sketch:type="MSShapeGroup">
+           
+           </path>
+                   </g>
+               </g>
+           </svg>     
+    </button>
+         <button class="px-4 py-2 text-blue-500 hover:text-blue-700 focus:outline-none">
+            <svg fill="#000000" width="30px" height="30px" viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;}</style></defs><title>send--filled</title><path d="M27.45,15.11l-22-11a1,1,0,0,0-1.08.12,1,1,0,0,0-.33,1L6.69,15H18v2H6.69L4,26.74A1,1,0,0,0,5,28a1,1,0,0,0,.45-.11l22-11a1,1,0,0,0,0-1.78Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg> </button>
+       </div>
+       
+   </div>
+</div>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+ 
