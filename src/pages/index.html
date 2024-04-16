@@ -62,13 +62,13 @@
          <li>
             <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
               
-               <span class="ms-3">Recent chart</span>
+               <span class="ms-3">Recent chat</span>
             </a>
          </li>
          <li>
             <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                
-               <span class="flex-1 ms-3 whitespace-nowrap">Mind your business</span>
+               
                </a>
          </li> 
       </ul>
@@ -78,39 +78,9 @@
 <div class="p-4 sm:ml-64">
    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
       <div class="grid grid-cols-1 gap-1 mb-4">
-         <div class="flex items-center justify-center h-full">
+         
             <div class="max-w-lg w-full">
-              <!-- User's message -->
-              <div class="flex justify-end mb-4">
-                <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-xs break-words">
-                  <p class="text-sm">You</p>
-                  <p>Hello, how are you?</p>
-                </div>
-              </div>
-        
-              <!-- AI's response -->
-              <div class="flex mb-4">
-                <div class="bg-gray-100 text-gray-800 rounded-lg py-2 px-4 max-w-xs break-words">
-                  <p class="text-sm">AI</p>
-                  <p>I'm doing well, thank you. How can I assist you today?</p>
-                </div>
-              </div>
-        
-              <!-- Another User's message -->
-              <div class="flex justify-end mb-4">
-                <div class="bg-blue-600 text-white rounded-lg py-2 px-4 max-w-xs break-words">
-                  <p class="text-sm">You</p>
-                  <p>Could you tell me about machine learning?</p>
-                </div>
-              </div>
-        
-              <!-- Another AI's response -->
-              <div class="flex mb-4">
-                <div class="bg-gray-100 text-gray-800 rounded-lg py-2 px-4 max-w-xs break-words">
-                  <p class="text-sm">AI</p>
-                  <p>Machine learning is a subset of artificial intelligence...</p>
-                </div>
-              </div>
+               <div id="message-container"></div>
          </div> 
       </div>
    </div>
@@ -120,10 +90,11 @@
 <div class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
    <div class="grid h-full max-w-lg  mx-auto font-medium">
        
-      <div class="flex items-center border border-gray-300 rounded-lg shadow-md">
+      <div class="flex ">
          <input
            type="text"
-           style="margin-left:80px"
+           style="margin-left:80px;width:700px"
+           id="message-input"
            class="flex-1 px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50"
            placeholder="Type a message..."
          />
@@ -144,12 +115,72 @@
                </g>
            </svg>     
     </button>
-         <button class="px-4 py-2 text-blue-500 hover:text-blue-700 focus:outline-none">
+         <button onclick="sendMessage()" class="px-4 py-2 text-blue-500 hover:text-blue-700 focus:outline-none">
             <svg fill="#000000" width="30px" height="30px" viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;}</style></defs><title>send--filled</title><path d="M27.45,15.11l-22-11a1,1,0,0,0-1.08.12,1,1,0,0,0-.33,1L6.69,15H18v2H6.69L4,26.74A1,1,0,0,0,5,28a1,1,0,0,0,.45-.11l22-11a1,1,0,0,0,0-1.78Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg> </button>
        </div>
        
    </div>
 </div>
+
+
+<script>
+   function sendMessage() {
+     // Get the input value
+     var messageInput = document.getElementById('message-input');
+     var messageText = messageInput.value.trim();
+
+     // If input is empty, do nothing
+     if (messageText === '') {
+       return;
+     }
+
+     // Create user message element
+     var userMessageDiv = createMessageBubble('You', messageText, 'bg-blue-600 text-white');
+
+     // Append user message to message container
+     var messageContainer = document.getElementById('message-container');
+     messageContainer.appendChild(userMessageDiv);
+
+     // Clear the input field
+     messageInput.value = '';
+
+     // Simulate AI response after a delay
+     setTimeout(function() {
+       var aiResponse = getAIResponse(messageText); // Get AI response based on user message
+       var aiMessageDiv = createMessageBubble('AI', aiResponse, 'bg-gray-100 text-gray-800');
+       messageContainer.appendChild(aiMessageDiv);
+     }, 1000);
+   }
+
+   function createMessageBubble(label, content, bgColor) {
+     var messageDiv = document.createElement('div');
+     messageDiv.className = 'flex mb-4';
+     var messageBubble = document.createElement('div');
+     messageBubble.className = bgColor + ' rounded-lg py-2 px-4 max-w-xs break-words';
+     var messageLabel = document.createElement('p');
+     messageLabel.className = 'text-sm';
+     messageLabel.textContent = label;
+     var messageContent = document.createElement('p');
+     messageContent.textContent = content;
+
+     messageBubble.appendChild(messageLabel);
+     messageBubble.appendChild(messageContent);
+     messageDiv.appendChild(messageBubble);
+
+     return messageDiv;
+   }
+
+   function getAIResponse(userMessage) {
+     // Simulate AI response based on user message
+     if (userMessage.toLowerCase().includes('hello')) {
+       return "Hello! How can I assist you today?";
+     } else if (userMessage.toLowerCase().includes('machine learning')) {
+       return "Machine learning is a subset of artificial intelligence...";
+     } else {
+       return "I'm sorry, I'm not sure how to respond to that.";
+     }
+   }
+ </script>
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
  
